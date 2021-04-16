@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Local Score Predictor</string>
+    <string name="PlayerName">Enter Player Name:</string>
+    <string name="PlayerNationality">"Enter Nationality: "</string>
+    <string name="PlayerRating">Enter Player Rating:</string>
+    <string name="PlayerPosition">Enter Player Position:</string>
+    <string name="ButtonAddPlayer">Add Player</string>
+    <string name="SquadRoster">Squad Roster</string>
+    <string name="LockIn">Lock In Squad</string>
+    <string name="SquadOverview">Squad Overview</string>
+    <string name="SquadO">Squad Overview</string>
+    <string name="OpponentValue">Choose Opponent Team\'s Value</string>
+    <string name="FindOp">Find Opponent</string>
+    <string name="YourSquadV">Squad Value</string>
+    <string name="SquadRatingTV">"Squad Value "</string>
+    <string name="ScorePred">Our Score Prediction</string>
+    <string name="ScoreUser">0</string>
+    <string name="ScoreOpponent">0</string>
+    <string name="bar">-</string>
+    <string name="NameT">Enter your team\'s name:</string>
+    <string name="OpponentT">Enter opponent team\'s name:</string>
+</resources>
