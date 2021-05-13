@@ -104,15 +104,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_player_position" />
 
-    <ImageButton
+    <Switch
         android:id="@+id/ib_sound"
-        android:layout_width="50dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="330dp"
-        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sound"
         app:layout_constraintBottom_toTopOf="@+id/et_player_name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/sound" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

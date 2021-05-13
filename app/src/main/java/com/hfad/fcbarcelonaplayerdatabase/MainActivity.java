@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
     ListView lv_players;
     DataBaseHelper supp_Playah,Neymar;
     ArrayAdapter playerArrayAdapter;
-    ImageButton ib_sound;
+    Switch ib_sound;
 
-    DataBaseHelper another_db_obj;
+
 
 
 
