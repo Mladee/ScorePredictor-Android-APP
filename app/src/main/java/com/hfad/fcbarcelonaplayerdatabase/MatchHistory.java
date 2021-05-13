@@ -56,4 +56,5 @@ public class MatchHistory extends AppCompatActivity {
         
         
     }
+    public void onBackPressed() {}
 }
