@@ -13,11 +13,11 @@
         android:id="@+id/lv_LockedInPlayers"
         android:layout_width="300dp"
         android:layout_height="200dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="72dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_SquadOverview" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_SquadOverview"
@@ -35,7 +35,7 @@
         android:id="@+id/rb_OpponentDifficulty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,11 +45,10 @@
         android:id="@+id/tv_Opponent_Difficulty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:textSize="20dp"
+        android:layout_marginTop="60dp"
         android:text="@string/OpponentValue"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rb_YourRating" />
 
@@ -59,9 +58,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Predict Match Result"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rb_OpponentDifficulty" />
+        app:layout_constraintTop_toBottomOf="@+id/rb_OpponentDifficulty"
+        app:layout_constraintVertical_bias="0.324" />
 
     <TextView
         android:id="@+id/tv_FoundOpponent"
@@ -93,10 +95,11 @@
         android:id="@+id/rb_YourRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:isIndicator="true"
         app:layout_constraintBottom_toTopOf="@+id/tv_Opponent_Difficulty"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lv_LockedInPlayers" />
 
