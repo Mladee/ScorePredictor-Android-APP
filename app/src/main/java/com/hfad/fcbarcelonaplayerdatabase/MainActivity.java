@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+/* Testing testing */
 
 
 
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+Toast.makeText(MainActivity.this,"TEST",Toast.LENGTH_SHORT).show();
 
 
         btn_add.setOnClickListener(new View.OnClickListener() {
