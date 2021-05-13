@@ -249,7 +249,7 @@ public class MatchUp extends AppCompatActivity {
         MatchHistoryDATABASE history_object = new MatchHistoryDATABASE(MatchUp.this);
 
 
-        boolean success = history_object.addOne(model);
+            boolean success = history_object.addOne(model);
 
 
 
@@ -257,7 +257,12 @@ public class MatchUp extends AppCompatActivity {
         btn_PredictAgain.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            if(et_UserTeamName.getText() == null || et_OpponentTeamName.getText() == null)
+            {
+                Toast.makeText(MatchUp.this,"Please write the teams' names!",Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
              model = new MatchHistoryMODEL(-1,et_UserTeamName.getText().toString(),et_OpponentTeamName.getText().toString(),Integer.parseInt(UserScore.getText().toString()),Integer.parseInt(OpponentScore.getText().toString()),Match_Result.getText().toString());
              MatchHistoryDATABASE history_object = new MatchHistoryDATABASE(MatchUp.this);
 
@@ -267,12 +272,17 @@ public class MatchUp extends AppCompatActivity {
 
             Intent intent = new Intent(MatchUp.this,MainActivity.class);
             startActivity(intent);
-        }
+        }}
     });
         btn_MatchHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if(et_UserTeamName.getText() == null || et_OpponentTeamName.getText() == null)
+                {
+                    Toast.makeText(MatchUp.this,"Please write the teams' names!",Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
                 model = new MatchHistoryMODEL(-1,et_UserTeamName.getText().toString(),et_OpponentTeamName.getText().toString(),Integer.parseInt(UserScore.getText().toString()),Integer.parseInt(OpponentScore.getText().toString()),Match_Result.getText().toString());
                 MatchHistoryDATABASE history_object = new MatchHistoryDATABASE(MatchUp.this);
 
@@ -282,7 +292,7 @@ public class MatchUp extends AppCompatActivity {
 
                 Intent intent = new Intent(MatchUp.this,MatchHistory.class);
                 startActivity(intent);
-            }
+            }}
         });
 
 
