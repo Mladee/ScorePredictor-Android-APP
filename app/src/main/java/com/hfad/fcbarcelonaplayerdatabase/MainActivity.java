@@ -24,14 +24,14 @@ public class MainActivity extends AppCompatActivity {
     EditText text_Name,text_Nationality,text_Position,text_Rating;
     Button btn_add,btn_lockIn;
     ListView lv_players;
-    DataBaseHelper supp_Playah,Neymar;
+    DataBaseHelper supp_Playah,Neymar,Data_Base_Object;
     ArrayAdapter playerArrayAdapter;
     Switch ib_sound;
 
 
 
 
-/* Testing testing */
+
 
 
 
@@ -82,7 +82,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-Toast.makeText(MainActivity.this,"TEST",Toast.LENGTH_SHORT).show();
+        Data_Base_Object = new DataBaseHelper(MainActivity.this);
+        List<PlayerModel> allOfThem =  Data_Base_Object.addAll();
+
+        playerArrayAdapter = new ArrayAdapter<PlayerModel>(MainActivity.this,android.R.layout.simple_list_item_1,allOfThem);
+        lv_players.setAdapter(playerArrayAdapter);
 
 
         btn_add.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +95,7 @@ Toast.makeText(MainActivity.this,"TEST",Toast.LENGTH_SHORT).show();
 
                 PlayerModel myPlayer;
 
-                Neymar = new DataBaseHelper(MainActivity.this);
+               Neymar = new DataBaseHelper(MainActivity.this);
                 int number_of_Players = Neymar.NumberofPlayers();
 
 
