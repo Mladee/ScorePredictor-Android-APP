@@ -59,6 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Predict Match Result"
+        app:backgroundTint="#3352AE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rb_OpponentDifficulty" />
