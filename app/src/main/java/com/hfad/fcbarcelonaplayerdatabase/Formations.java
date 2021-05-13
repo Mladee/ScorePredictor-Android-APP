@@ -128,21 +128,29 @@ public class Formations extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
                 float Opponent_Rating = rb_Opponent.getRating();
                 float TeamRating = Opponent_Rating * 20;
-                tv_matchedOpponent.setText("Generating predicted result against a team which has an average rating of: " + TeamRating + "... ");
 
-                timer = new Timer();
-                timer.schedule(new TimerTask()  {
-                    @Override
-                    public void run() {
-                        Intent intent = new Intent(Formations.this,MatchUp.class);
-                        intent.putExtra(PackageName,TeamRating);
-                        startActivity(intent);
+                if(TeamRating != 0 ) {
 
-                    }
-                },3000);
 
+                    tv_matchedOpponent.setText("Generating predicted result against a team which has an average rating of: " + TeamRating + "... ");
+
+                    timer = new Timer();
+                    timer.schedule(new TimerTask() {
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent(Formations.this, MatchUp.class);
+                            intent.putExtra(PackageName, TeamRating);
+                            startActivity(intent);
+
+                        }
+                    }, 3000);
+                }
+                else{
+                    Toast.makeText(Formations.this,"Please Select Opponent Team Value!",Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
