@@ -47,184 +47,24 @@ public class MatchUp extends AppCompatActivity {
         Intent intent = getIntent();
         float opponent_Rating = intent.getFloatExtra(Formations.PackageName,0);
         int final_opponent_team_rating = (int)(opponent_Rating);
-
-
         rand_score_generator = new Random();
+        if(final_user_team_rating>final_opponent_team_rating) {
+            int x = final_user_team_rating - final_opponent_team_rating;
 
-        int score_user_team = rand_score_generator.nextInt(3);
-        int score_opponent_team = rand_score_generator.nextInt(3);
-
-
-        if(final_user_team_rating>=90 && final_opponent_team_rating>=90)
-        {
+            int score_user_team = rand_score_generator.nextInt(35 + x / 3) / 10;
+            int score_opponent_team = rand_score_generator.nextInt(35 - x / 3) / 10;
             UserScore.setText("" + score_user_team);
             OpponentScore.setText("" + score_opponent_team);
         }
-        else if(final_user_team_rating>=90 && final_opponent_team_rating>=80 && final_opponent_team_rating<90 )
+        else
         {
-            UserScore.setText("" + (score_user_team+1));
+            int x = final_opponent_team_rating - final_user_team_rating;
+
+            int score_user_team = rand_score_generator.nextInt(35 - x / 3) / 10;
+            int score_opponent_team = rand_score_generator.nextInt(35 + x/3) / 10;
+            UserScore.setText("" + score_user_team);
             OpponentScore.setText("" + score_opponent_team);
         }
-        else if(final_user_team_rating>=90 && final_opponent_team_rating>=70 && final_opponent_team_rating<80 )
-        {
-            UserScore.setText("" + (score_user_team+2));
-            OpponentScore.setText("" + score_opponent_team);
-        }
-        else if(final_user_team_rating>=90 && final_opponent_team_rating>=60 && final_opponent_team_rating<70 )
-        {
-            UserScore.setText("" + (score_user_team+3));
-            OpponentScore.setText("" + score_opponent_team);
-        }
-        else if(final_user_team_rating>=90  && final_opponent_team_rating<60 )
-        {
-            UserScore.setText("" + (score_user_team+4));
-            OpponentScore.setText("" + score_opponent_team);
-        }
-
-
-
-        else if(final_user_team_rating>=80 && final_user_team_rating<90 && final_opponent_team_rating>=90)
-        {
-            UserScore.setText("" + score_user_team);
-            OpponentScore.setText("" + (score_opponent_team+1));
-        }
-        else if(final_user_team_rating>=80 && final_user_team_rating<90 && final_opponent_team_rating>=80 && final_opponent_team_rating<=90)
-        {
-            UserScore.setText("" + score_user_team);
-            OpponentScore.setText("" + (score_opponent_team));
-        }
-        else if(final_user_team_rating>=80 && final_user_team_rating<90 && final_opponent_team_rating>=70 && final_opponent_team_rating<=80)
-        {
-            UserScore.setText("" + (score_user_team+1));
-            OpponentScore.setText("" + (score_opponent_team));
-        }
-        else if(final_user_team_rating>=80 && final_user_team_rating<90 && final_opponent_team_rating>=60 && final_opponent_team_rating<=70)
-        {
-            UserScore.setText("" + (score_user_team+2));
-            OpponentScore.setText("" + (score_opponent_team));
-        }
-        else if(final_user_team_rating>=80 && final_user_team_rating<90 && final_opponent_team_rating>=50 && final_opponent_team_rating<=60)
-        {
-            UserScore.setText("" + (score_user_team+3));
-            OpponentScore.setText("" + (score_opponent_team));
-        }
-        else if(final_user_team_rating>=80 && final_user_team_rating<90 && final_opponent_team_rating<50)
-        {
-            UserScore.setText("" + (score_user_team+4));
-            OpponentScore.setText("" + (score_opponent_team));
-        }
-
-
-
-
-        else if(final_user_team_rating>=70 && final_user_team_rating<80 && final_opponent_team_rating>=90)
-        {
-            UserScore.setText("" + score_user_team);
-            OpponentScore.setText("" + (score_opponent_team+2));
-        }
-        else if(final_user_team_rating>=70 && final_user_team_rating<80 && final_opponent_team_rating>=80 && final_opponent_team_rating<=90)
-        {
-            UserScore.setText("" + score_user_team);
-            OpponentScore.setText("" + (score_opponent_team+1));
-        }
-        else if(final_user_team_rating>=70 && final_user_team_rating<80 && final_opponent_team_rating>=70 && final_opponent_team_rating<=80)
-        {
-            UserScore.setText("" + (score_user_team));
-            OpponentScore.setText("" + (score_opponent_team+1));
-        }
-        else if(final_user_team_rating>=70 && final_user_team_rating<80 && final_opponent_team_rating>=60 && final_opponent_team_rating<=70)
-        {
-            UserScore.setText("" + (score_user_team+1));
-            OpponentScore.setText("" + (score_opponent_team));
-        }
-        else if(final_user_team_rating>=70 && final_user_team_rating<80 && final_opponent_team_rating>=50 && final_opponent_team_rating<=60)
-        {
-            UserScore.setText("" + (score_user_team+2));
-            OpponentScore.setText("" + (score_opponent_team));
-        }
-        else if(final_user_team_rating>=70 && final_user_team_rating<80 && final_opponent_team_rating<50)
-        {
-            UserScore.setText("" + (score_user_team+3));
-            OpponentScore.setText("" + (score_opponent_team));
-        }
-
-
-
-
-        else if(final_user_team_rating>=50 && final_user_team_rating<70 && final_opponent_team_rating>=90)
-        {
-            UserScore.setText("" + score_user_team);
-            OpponentScore.setText("" + (score_opponent_team+3));
-        }
-        else if(final_user_team_rating>=50 && final_user_team_rating<70 && final_opponent_team_rating>=80 && final_opponent_team_rating<=90)
-        {
-            UserScore.setText("" + score_user_team);
-            OpponentScore.setText("" + (score_opponent_team+2));
-        }
-        else if(final_user_team_rating>=50 && final_user_team_rating<70 && final_opponent_team_rating>=70 && final_opponent_team_rating<=80)
-        {
-            UserScore.setText("" + (score_user_team));
-            OpponentScore.setText("" + (score_opponent_team+1));
-        }
-        else if(final_user_team_rating>=50 && final_user_team_rating<70 && final_opponent_team_rating>=60 && final_opponent_team_rating<=70)
-        {
-            UserScore.setText("" + (score_user_team));
-            OpponentScore.setText("" + (score_opponent_team+1));
-        }
-        else if(final_user_team_rating>=50 && final_user_team_rating<70 && final_opponent_team_rating>=50 && final_opponent_team_rating<=60)
-        {
-            UserScore.setText("" + (score_user_team+1));
-            OpponentScore.setText("" + (score_opponent_team));
-        }
-        else if(final_user_team_rating>=50 && final_user_team_rating<70 && final_opponent_team_rating<50)
-        {
-            UserScore.setText("" + (score_user_team+1));
-            OpponentScore.setText("" + (score_opponent_team));
-        }
-
-
-
-
-
-        else if(final_user_team_rating<=50 && final_opponent_team_rating>=90)
-        {
-            UserScore.setText("" + score_user_team);
-            OpponentScore.setText("" + (score_opponent_team+4));
-        }
-        else if(final_user_team_rating<=50 && final_opponent_team_rating<=90 && final_opponent_team_rating>=80)
-        {
-            UserScore.setText("" + score_user_team);
-            OpponentScore.setText("" + (score_opponent_team+3));
-        }
-        else if(final_user_team_rating<=50 && final_opponent_team_rating<=80 && final_opponent_team_rating>=70)
-        {
-            UserScore.setText("" + score_user_team);
-            OpponentScore.setText("" + (score_opponent_team+2));
-        }
-        else if(final_user_team_rating<=50 && final_opponent_team_rating<=70 && final_opponent_team_rating>=60)
-        {
-            UserScore.setText("" + score_user_team);
-            OpponentScore.setText("" + (score_opponent_team+1));
-        }
-        else if(final_user_team_rating<=50 && final_opponent_team_rating<=60 && final_opponent_team_rating>=50)
-        {
-            UserScore.setText("" + score_user_team);
-            OpponentScore.setText("" + (score_opponent_team+1));
-        }
-        else if(final_user_team_rating<=50 && final_opponent_team_rating<=50)
-        {
-            UserScore.setText("" + score_user_team);
-            OpponentScore.setText("" + (score_opponent_team));
-        }
-
-
-        else{
-            UserScore.setText("error");
-            OpponentScore.setText("error");
-        }
-
-
-
 
 
 
@@ -248,10 +88,6 @@ public class MatchUp extends AppCompatActivity {
 
         model = new MatchHistoryMODEL(-1,et_UserTeamName.getText().toString(),et_OpponentTeamName.getText().toString(),Integer.parseInt(UserScore.getText().toString()),Integer.parseInt(OpponentScore.getText().toString()),Match_Result.getText().toString());
         MatchHistoryDATABASE history_object = new MatchHistoryDATABASE(MatchUp.this);
-
-
-        boolean success = history_object.addOne(model);
-
 
 
 
@@ -299,5 +135,5 @@ public class MatchUp extends AppCompatActivity {
 
     }
 
-
+    public void onBackPressed() {}
 }
