@@ -44,6 +44,8 @@ public class MatchUp extends AppCompatActivity {
         Messi = new DataBaseHelper((MatchUp.this));
         float user_team_rating = Messi.TeamRating();
         int final_user_team_rating = (int)(user_team_rating*20);
+
+
         Intent intent = getIntent();
         float opponent_Rating = intent.getFloatExtra(Formations.PackageName,0);
         int final_opponent_team_rating = (int)(opponent_Rating);
@@ -298,6 +300,7 @@ public class MatchUp extends AppCompatActivity {
 
 
     }
+    public void onBackPressed() {}
 
 
 }
