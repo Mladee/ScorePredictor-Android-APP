@@ -59,12 +59,12 @@ public class MatchUp extends AppCompatActivity {
 
         if(final_user_team_rating>=90 && final_opponent_team_rating>=90)
         {
-            UserScore.setText(score_user_team);
-            OpponentScore.setText(score_opponent_team);
+            UserScore.setText("" + score_user_team);
+            OpponentScore.setText("" + score_opponent_team);
         }
         else if(final_user_team_rating>=90 && final_opponent_team_rating>=80 && final_opponent_team_rating<90 )
         {
-            UserScore.setText((score_user_team+1));
+            UserScore.setText("" + (score_user_team+1));
             OpponentScore.setText("" + score_opponent_team);
         }
         else if(final_user_team_rating>=90 && final_opponent_team_rating>=70 && final_opponent_team_rating<80 )
@@ -224,9 +224,6 @@ public class MatchUp extends AppCompatActivity {
             UserScore.setText("error");
             OpponentScore.setText("error");
         }
-
-
-
 
 
 
