@@ -128,11 +128,16 @@ public class MainActivity extends AppCompatActivity {
             lv_players.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
                     PlayerModel Messi = (PlayerModel) parent.getItemAtPosition(position);
                     supp_Playah.deleteOne(Messi);
                     List<PlayerModel> allOfThem = supp_Playah.addAll();
                     playerArrayAdapter = new ArrayAdapter<PlayerModel>(MainActivity.this, android.R.layout.simple_list_item_1, allOfThem);
                     lv_players.setAdapter(playerArrayAdapter);
+
+
+
                     Neymar = new DataBaseHelper(MainActivity.this);
                     int number_of_Players = Neymar.NumberofPlayers();
 
