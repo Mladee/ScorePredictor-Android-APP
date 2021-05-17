@@ -59,12 +59,12 @@ public class MatchUp extends AppCompatActivity {
 
         if(final_user_team_rating>=90 && final_opponent_team_rating>=90)
         {
-            UserScore.setText(score_user_team);
-            OpponentScore.setText(score_opponent_team);
+            UserScore.setText("" + score_user_team);
+            OpponentScore.setText("" + score_opponent_team);
         }
         else if(final_user_team_rating>=90 && final_opponent_team_rating>=80 && final_opponent_team_rating<90 )
         {
-            UserScore.setText((score_user_team+1));
+            UserScore.setText("" + (score_user_team+1));
             OpponentScore.setText("" + score_opponent_team);
         }
         else if(final_user_team_rating>=90 && final_opponent_team_rating>=70 && final_opponent_team_rating<80 )
@@ -227,9 +227,6 @@ public class MatchUp extends AppCompatActivity {
 
 
 
-
-
-
         int a = Integer.parseInt((String) UserScore.getText());
         int b = Integer.parseInt((String) OpponentScore.getText());
 
@@ -300,7 +297,7 @@ public class MatchUp extends AppCompatActivity {
 
     }
     public void onBackPressed() {
-        /*if(TextUtils.isEmpty(et_UserTeamName.getText().toString()) || TextUtils.isEmpty(et_OpponentTeamName.getText().toString()) )
+        if(TextUtils.isEmpty(et_UserTeamName.getText().toString()) || TextUtils.isEmpty(et_OpponentTeamName.getText().toString()) )
             Toast.makeText(MatchUp.this,"If you want to go back, fill the names",Toast.LENGTH_SHORT).show();
         else {
 
@@ -309,7 +306,7 @@ public class MatchUp extends AppCompatActivity {
             boolean success = history_object.addOne(model);
             Intent intent = new Intent(MatchUp.this, Menu.class);
             startActivity(intent);
-        }*/
+        }
 
 
 }}
