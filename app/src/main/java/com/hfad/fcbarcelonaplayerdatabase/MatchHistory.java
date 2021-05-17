@@ -56,5 +56,8 @@ public class MatchHistory extends AppCompatActivity {
         
         
     }
-    public void onBackPressed() {}
+    public void onBackPressed() {
+        Intent intent = new Intent(MatchHistory.this, Menu.class);
+        startActivity(intent);
+    }
 }

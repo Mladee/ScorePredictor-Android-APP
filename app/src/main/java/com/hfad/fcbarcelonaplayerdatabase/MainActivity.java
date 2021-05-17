@@ -163,7 +163,10 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        public void onBackPressed () {}
+        public void onBackPressed () {
+            Intent intent = new Intent(MainActivity.this, Menu.class);
+            startActivity(intent);
+        }
 
 
 }
