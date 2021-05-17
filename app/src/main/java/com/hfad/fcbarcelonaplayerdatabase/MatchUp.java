@@ -300,7 +300,7 @@ public class MatchUp extends AppCompatActivity {
 
     }
     public void onBackPressed() {
-        if(TextUtils.isEmpty(et_UserTeamName.getText().toString()) || TextUtils.isEmpty(et_OpponentTeamName.getText().toString()) )
+        /*if(TextUtils.isEmpty(et_UserTeamName.getText().toString()) || TextUtils.isEmpty(et_OpponentTeamName.getText().toString()) )
             Toast.makeText(MatchUp.this,"If you want to go back, fill the names",Toast.LENGTH_SHORT).show();
         else {
 
@@ -309,7 +309,7 @@ public class MatchUp extends AppCompatActivity {
             boolean success = history_object.addOne(model);
             Intent intent = new Intent(MatchUp.this, Menu.class);
             startActivity(intent);
-        }
+        }*/
 
 
 }}
