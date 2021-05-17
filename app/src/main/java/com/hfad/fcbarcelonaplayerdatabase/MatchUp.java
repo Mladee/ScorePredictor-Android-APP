@@ -59,12 +59,12 @@ public class MatchUp extends AppCompatActivity {
 
         if(final_user_team_rating>=90 && final_opponent_team_rating>=90)
         {
-            UserScore.setText("" + score_user_team);
-            OpponentScore.setText("" + score_opponent_team);
+            UserScore.setText(score_user_team);
+            OpponentScore.setText(score_opponent_team);
         }
         else if(final_user_team_rating>=90 && final_opponent_team_rating>=80 && final_opponent_team_rating<90 )
         {
-            UserScore.setText("" + (score_user_team+1));
+            UserScore.setText((score_user_team+1));
             OpponentScore.setText("" + score_opponent_team);
         }
         else if(final_user_team_rating>=90 && final_opponent_team_rating>=70 && final_opponent_team_rating<80 )
@@ -288,7 +288,6 @@ public class MatchUp extends AppCompatActivity {
                 }
                 else {
 
-
                     model = new MatchHistoryMODEL(-1, et_UserTeamName.getText().toString(), et_OpponentTeamName.getText().toString(), Integer.parseInt(UserScore.getText().toString()), Integer.parseInt(OpponentScore.getText().toString()), Match_Result.getText().toString());
                     MatchHistoryDATABASE history_object = new MatchHistoryDATABASE(MatchUp.this);
                     boolean success = history_object.addOne(model);
@@ -300,7 +299,17 @@ public class MatchUp extends AppCompatActivity {
 
 
     }
-    public void onBackPressed() {}
+    public void onBackPressed() {
+        if(TextUtils.isEmpty(et_UserTeamName.getText().toString()) || TextUtils.isEmpty(et_OpponentTeamName.getText().toString()) )
+            Toast.makeText(MatchUp.this,"If you want to go back, fill the names",Toast.LENGTH_SHORT).show();
+        else {
+
+            model = new MatchHistoryMODEL(-1, et_UserTeamName.getText().toString(), et_OpponentTeamName.getText().toString(), Integer.parseInt(UserScore.getText().toString()), Integer.parseInt(OpponentScore.getText().toString()), Match_Result.getText().toString());
+            MatchHistoryDATABASE history_object = new MatchHistoryDATABASE(MatchUp.this);
+            boolean success = history_object.addOne(model);
+            Intent intent = new Intent(MatchUp.this, Menu.class);
+            startActivity(intent);
+        }
 
 
-}
+}}
