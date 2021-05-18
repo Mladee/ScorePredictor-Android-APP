@@ -22,6 +22,7 @@ public class MatchHistoryMODEL {
 
 
     @Override
+
     public String toString() {
         return
                 "Match number " + id +

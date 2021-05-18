@@ -249,9 +249,6 @@ public class MatchUp extends AppCompatActivity {
         MatchHistoryDATABASE history_object = new MatchHistoryDATABASE(MatchUp.this);
 
 
-        boolean success = history_object.addOne(model);
-
-
 
 
         btn_PredictAgain.setOnClickListener(new View.OnClickListener() {
