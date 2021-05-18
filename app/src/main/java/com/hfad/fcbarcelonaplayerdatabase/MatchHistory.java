@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -18,6 +19,7 @@ public class MatchHistory extends AppCompatActivity {
    ListView History_List;
     TextView text;
     Button btn_Predict;
+    ArrayAdapter playerArrayAdapter;
 
 
     MatchHistoryDATABASE database_object;
@@ -50,6 +52,28 @@ public class MatchHistory extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
+        History_List.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                MatchHistoryMODEL Messi = (MatchHistoryMODEL) parent.getItemAtPosition(position);
+                database_object.deleteOne(Messi);
+                List<MatchHistoryMODEL> allOfThem = database_object.getAll();
+                playerArrayAdapter = new ArrayAdapter<MatchHistoryMODEL>(MatchHistory.this, android.R.layout.simple_list_item_1, allOfThem);
+                History_List.setAdapter(playerArrayAdapter);
+
+
+
+
+            }
+        });
+
+
+
 
 
         
