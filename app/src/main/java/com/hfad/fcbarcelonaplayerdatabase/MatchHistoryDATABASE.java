@@ -93,6 +93,21 @@ public class MatchHistoryDATABASE extends SQLiteOpenHelper {
     }
 
 
+    public boolean deleteOne(MatchHistoryMODEL obj)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String queryString = " DELETE FROM " + MATCH_HISTORY_TABLE + " WHERE " + COLUMN_ID + " = " + obj.getId();
+        Cursor cursor = db.rawQuery(queryString,null);
+        if(cursor.moveToFirst())
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
 
 
 
